@@ -22,8 +22,8 @@ full_node_networks:
       mutual_authentication: false
       # Define the upstream peers to connect to
       seed_addrs:
-        0f5e83c2030ee771b87c892ce79eba6851d88e714749fd82a8730694a3afd48d:
-            - "/ip4/127.0.0.1/tcp/6181/noise-ik/3e7a91da97ebe61451410578244065c87458b055a4c2d68729245b6d2d2e7e00/handshake/0"
+        8fa73ef4b928a96dd21eda16c8a5bfe97db0e860ca081353c36fcada772c8319:
+            - "/ip4/127.0.0.1/tcp/6181/noise-ik/a6dfb207af8e8e0f12ba2d151991bb1d9e5f6a26df33d0bbeab0b476c0a96e61/handshake/0"
           # role: "Validator"
           
 state_sync:
