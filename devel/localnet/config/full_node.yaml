@@ -1,7 +1,7 @@
 ---
   base:
     data_dir: "/Users/ppoliani/aptos-node-testnet"
-    role: validator
+    role: full_node
     waypoint:
       # Update this value to that which the blockchain publicly provides. Please regard the directions
       # below on how to safely manage your genesis_file_location with respect to the waypoint.
@@ -50,61 +50,15 @@
     concurrency_level: 8
     num_proof_reading_threads: 32
   full_node_networks:
-    - max_connection_delay_ms: 60000
-      connection_backoff_base: 2
-      connectivity_check_interval_ms: 5000
-      network_channel_size: 1024
-      max_concurrent_network_reqs: 100
-      discovery_method: onchain
-      discovery_methods: []
-      identity:
-        type: from_file
-        path: {vfn-identity-file}
-      listen_address: /ip4/0.0.0.0/tcp/6191
-      mutual_authentication: false
-      network_id: public
-      runtime_threads: ~
+    - discovery_method: "onchain"
+      # The network must have a listen address to specify protocols. This runs it locally to
+      # prevent remote, incoming connections.
+      listen_address: "/ip4/127.0.0.1/tcp/6190"
+      network_id: "public"
+      # Define the upstream peers to connect to
       seed_addrs:
-        ba8e4dcf8041cb87d75a9f749694d5568533e3495369a3f4b8e798eda2afefc4:
-            - "/ip4/127.0.0.1/tcp/6181/noise-ik/66bfce7ab50289e58f49bf40f7dd66008fc178ba0c349afed26ff595835ebc5a/handshake/0"
-      seeds: {}
-      max_frame_size: 4194304
-      enable_proxy_protocol: false
-      ping_interval_ms: 10000
-      ping_timeout_ms: 20000
-      ping_failures_tolerated: 3
-      max_outbound_connections: 0
-      max_inbound_connections: 30
-      inbound_rate_limit_config: ~
-      outbound_rate_limit_config: ~
-      max_message_size: 67108864
-    - max_connection_delay_ms: 60000
-      connection_backoff_base: 2
-      connectivity_check_interval_ms: 5000
-      network_channel_size: 1024
-      max_concurrent_network_reqs: 100
-      discovery_method: none
-      discovery_methods: []
-      identity:
-        type: from_file
-        path: {vfn-identity-file}
-      listen_address: /ip4/0.0.0.0/tcp/64722
-      mutual_authentication: false
-      network_id:
-        private: vfn
-      runtime_threads: ~
-      seed_addrs: {}
-      seeds: {}
-      max_frame_size: 4194304
-      enable_proxy_protocol: false
-      ping_interval_ms: 10000
-      ping_timeout_ms: 20000
-      ping_failures_tolerated: 3
-      max_outbound_connections: 0
-      max_inbound_connections: 30
-      inbound_rate_limit_config: ~
-      outbound_rate_limit_config: ~
-      max_message_size: 67108864
+        5d82f96fc9b57bc8fafaacbc5160a168345d718c89a5d7786a52714113e4dae7:
+            - "/ip4/127.0.0.1/tcp/6181/noise-ik/1e678d10f158f3ea2cc085119aebeb6d03dc926c7b28a543aed464e577d1b510/handshake/0"
   inspection_service:
     address: 0.0.0.0
     port: 9111
@@ -229,32 +183,32 @@
         cache_index_and_filter_blocks: false
     enable_indexer: true
   test: ~
-  validator_network:
-    max_connection_delay_ms: 60000
-    connection_backoff_base: 2
-    connectivity_check_interval_ms: 5000
-    network_channel_size: 1024
-    max_concurrent_network_reqs: 100
-    discovery_method: onchain
-    discovery_methods: []
-    identity:
-      type: from_file
-      path: {validator-identity-file}
-    listen_address: /ip4/0.0.0.0/tcp/6190
-    mutual_authentication: true
-    network_id: validator
-    runtime_threads: ~
-    seed_addrs: {}
-    seeds: {}
-    max_frame_size: 4194304
-    enable_proxy_protocol: false
-    ping_interval_ms: 10000
-    ping_timeout_ms: 20000
-    ping_failures_tolerated: 3
-    max_outbound_connections: 4
-    max_inbound_connections: 30
-    inbound_rate_limit_config: ~
-    outbound_rate_limit_config: ~
-    max_message_size: 67108864
+  # validator_network:
+  #   max_connection_delay_ms: 60000
+  #   connection_backoff_base: 2
+  #   connectivity_check_interval_ms: 5000
+  #   network_channel_size: 1024
+  #   max_concurrent_network_reqs: 100
+  #   discovery_method: onchain
+  #   discovery_methods: []
+  #   identity:
+  #     type: from_file
+  #     path: {validator-identity-file}
+  #   listen_address: /ip4/0.0.0.0/tcp/6190
+  #   mutual_authentication: true
+  #   network_id: validator
+  #   runtime_threads: ~
+  #   seed_addrs: {}
+  #   seeds: {}
+  #   max_frame_size: 4194304
+  #   enable_proxy_protocol: false
+  #   ping_interval_ms: 10000
+  #   ping_timeout_ms: 20000
+  #   ping_failures_tolerated: 3
+  #   max_outbound_connections: 4
+  #   max_inbound_connections: 30
+  #   inbound_rate_limit_config: ~
+  #   outbound_rate_limit_config: ~
+  #   max_message_size: 67108864
   failpoints: ~
   
