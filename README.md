@@ -63,7 +63,7 @@
     And ensure blocks are flowing:
 
     ```
-    grpcurl -plaintext -import-path ../proto -import-path ./proto -proto sf/aptos/type/v1/type.proto -proto sf/firehose/v2/firehose.proto -d '{"start_block_num": 0}' localhost:18015 sf.firehose.v2.Stream.Blocks
+    grpcurl -plaintext -import-path ../proto -import-path ./proto -proto sf/aptos/type/v1/type.proto -proto sf/firehose/v2/firehose.proto -d '{"start_block_num": 0}' 127.0.0.1:18015 sf.firehose.v2.Stream.Blocks
     ```
 
 1. (optional) Make .spkg file for substreams
