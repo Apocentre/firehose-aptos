@@ -9,6 +9,8 @@
   consensus:
     max_sending_block_txns: 6000
     max_sending_block_bytes: 5242880
+    max_receiving_block_txns: 10000
+    max_receiving_block_bytes: 3145728
     max_pruned_blocks_in_mem: 100
     mempool_executed_txn_timeout_ms: 1000
     mempool_txn_pull_timeout_ms: 1000
@@ -57,8 +59,8 @@
       network_id: "public"
       # Define the upstream peers to connect to
       seed_addrs:
-        aa2f53879265eeb628a97ff7160be3bb11938886810728e06581027b353768aa:
-            - "/ip4/127.0.0.1/tcp/6181/noise-ik/e9df80d2c181b448fd0981c010b2d3fa4a5a3ae0727849e10a01ead3fe78bd4e/handshake/0"
+        ff1704567967c34f130690077857ff0a62a3daeb291b2c75891915a7a907372a:
+            - "/ip4/127.0.0.1/tcp/6181/noise-ik/4cd084dd07ec5dda768592d61a87e0b6e87e43eb06fc7208889c147e445aa55c/handshake/0"
   inspection_service:
     address: 0.0.0.0
     port: 9111
@@ -158,6 +160,7 @@
         enable: true
         prune_window: 80000000
         batch_size: 1000
+    buffered_state_target_items: 100000
     max_num_nodes_per_lru_cache_shard: 8192
     rocksdb_configs:
       ledger_db_config:
