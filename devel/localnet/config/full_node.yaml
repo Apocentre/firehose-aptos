@@ -59,8 +59,8 @@
       network_id: "public"
       # Define the upstream peers to connect to
       seed_addrs:
-        ff1704567967c34f130690077857ff0a62a3daeb291b2c75891915a7a907372a:
-            - "/ip4/127.0.0.1/tcp/6181/noise-ik/4cd084dd07ec5dda768592d61a87e0b6e87e43eb06fc7208889c147e445aa55c/handshake/0"
+        c20e0ce5c873d0b77f5070df89d1c52c38ae93ab41a731dafa0069107f6bace0:
+            - "/ip4/127.0.0.1/tcp/6181/noise-ik/aca3a679c505f83486b2c550a390af8c7c86ef68cf0f14a3f5012a18dbe7dd18/handshake/0"
   inspection_service:
     address: 0.0.0.0
     port: 9111
