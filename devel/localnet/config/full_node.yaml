@@ -7,8 +7,8 @@
       # below on how to safely manage your genesis_file_location with respect to the waypoint.
       from_file: "./config/waypoint.txt"
   consensus:
-    max_sending_block_txns: 6000
-    max_sending_block_bytes: 5242880
+    max_sending_block_txns: 2500
+    max_sending_block_bytes: 614400
     max_receiving_block_txns: 10000
     max_receiving_block_bytes: 3145728
     max_pruned_blocks_in_mem: 100
