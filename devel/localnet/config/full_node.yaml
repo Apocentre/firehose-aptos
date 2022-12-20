@@ -43,7 +43,6 @@
             from_file: "./config/waypoint.txt"
     sync_only: false
     channel_size: 30
-    use_quorum_store: false
     quorum_store_pull_timeout_ms: 1000
     quorum_store_poll_count: 5
     intra_consensus_channel_buffer_size: 10
@@ -59,8 +58,8 @@
       network_id: "public"
       # Define the upstream peers to connect to
       seed_addrs:
-        c20e0ce5c873d0b77f5070df89d1c52c38ae93ab41a731dafa0069107f6bace0:
-            - "/ip4/127.0.0.1/tcp/6181/noise-ik/aca3a679c505f83486b2c550a390af8c7c86ef68cf0f14a3f5012a18dbe7dd18/handshake/0"
+        32bd530c8e38fe289f136148c081579b85442b0b3730f556b87d123bc999ac51:
+            - "/ip4/127.0.0.1/tcp/6181/noise-ik/5e4e5602354b5551735b9321e966a0fd9c58d9b37f6e376eb07aaf4c279fc956/handshake/0"
   inspection_service:
     address: 0.0.0.0
     port: 9111
@@ -90,7 +89,6 @@
     shared_mempool_tick_interval_ms: 50
     system_transaction_timeout_secs: 600
     system_transaction_gc_interval_ms: 60000
-    shared_mempool_validator_broadcast: true
   metrics: {}
   peer_monitoring_service:
     max_concurrent_requests: 1000
