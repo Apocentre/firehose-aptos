@@ -157,7 +157,7 @@
         block_cache_size: 8388608
         block_size: 4096
         cache_index_and_filter_blocks: false
-    enable_indexer: false
+    enable_indexer: true
   test: ~
   failpoints: ~
   
