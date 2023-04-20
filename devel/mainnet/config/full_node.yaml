@@ -122,7 +122,7 @@
     storage_pruner_config:
       ledger_pruner_config:
         enable: true
-        prune_window: 100000000
+        prune_window: 150000000
         batch_size: 500
         user_pruning_window_offset: 200000
       state_merkle_pruner_config:
