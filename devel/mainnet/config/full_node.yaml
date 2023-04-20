@@ -127,7 +127,7 @@
         user_pruning_window_offset: 200000
       state_merkle_pruner_config:
         enable: true
-        prune_window: 100000
+        prune_window: 1000000
         batch_size: 1000
       epoch_snapshot_pruner_config:
         enable: true
