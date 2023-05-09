@@ -6,22 +6,6 @@
       # Update this value to that which the blockchain publicly provides. Please regard the directions
       # below on how to safely manage your genesis_file_location with respect to the waypoint.
       from_file: "./config/waypoint.txt"
-  consensus:
-    max_sending_block_txns: 2500
-    max_sending_block_bytes: 614400
-    max_receiving_block_txns: 10000
-    max_receiving_block_bytes: 3145728
-    max_pruned_blocks_in_mem: 100
-    mempool_executed_txn_timeout_ms: 1000
-    mempool_txn_pull_timeout_ms: 1000
-    round_initial_timeout_ms: 1500
-    round_timeout_backoff_exponent_base: 1.2
-    round_timeout_backoff_max_exponent: 6
-    sync_only: false
-    channel_size: 30
-    quorum_store_pull_timeout_ms: 1000
-    quorum_store_poll_count: 5
-    intra_consensus_channel_buffer_size: 10
   execution:
     genesis_file_location: {genesis-file}
     concurrency_level: 8
@@ -40,15 +24,6 @@
     port: 9111
     expose_configuration: false
     expose_system_information: true
-  logger:
-    chan_size: 10000
-    enable_backtrace: false
-    is_async: true
-    level: DEBUG
-    console_port: ~
-    enable_telemetry_remote_log: true
-    enable_telemetry_flush: true
-    telemetry_level: ERROR
   mempool:
     capacity: 2000000
     capacity_bytes: 2147483648
@@ -64,7 +39,6 @@
     shared_mempool_tick_interval_ms: 50
     system_transaction_timeout_secs: 600
     system_transaction_gc_interval_ms: 60000
-  metrics: {}
   peer_monitoring_service:
     max_concurrent_requests: 1000
     max_network_channel_size: 1000
@@ -158,6 +132,3 @@
         block_size: 4096
         cache_index_and_filter_blocks: false
     enable_indexer: true
-  test: ~
-  failpoints: ~
-  
